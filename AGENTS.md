@@ -26,3 +26,7 @@ After a few seconds, the message disappears, and the screen resets with a new im
 ## Project structure
 
 - Image assets of lemons and limes are stored under res/lemon and res/lime, respectively.
+
+## Workflow
+
+- Commit completed changes to git by default.
