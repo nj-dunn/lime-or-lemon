@@ -80,8 +80,10 @@ body {
 }
 
 .fruit-image {
-  width: min(70vw, 420px);
-  height: min(70vw, 420px);
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  height: auto;
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 8px 26px rgba(35, 48, 48, 0.15);
