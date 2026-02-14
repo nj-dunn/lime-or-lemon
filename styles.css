@@ -1,0 +1,99 @@
+:root {
+  --bg-start: #f7f3d5;
+  --bg-end: #d4f3c3;
+  --panel: #ffffffcf;
+  --text: #233030;
+  --lime: #2f9d44;
+  --lemon: #c4a000;
+  --ok: #1f7a34;
+  --bad: #a12b1b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 20%, #ffffff 0, transparent 40%),
+    linear-gradient(140deg, var(--bg-start), var(--bg-end));
+  display: grid;
+  place-items: center;
+}
+
+.game {
+  width: min(92vw, 640px);
+  padding: 1.25rem;
+  border-radius: 20px;
+  background: var(--panel);
+  box-shadow: 0 14px 32px rgba(35, 48, 48, 0.2);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 1rem;
+}
+
+.fruit-image {
+  width: min(70vw, 420px);
+  height: min(70vw, 420px);
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 26px rgba(35, 48, 48, 0.15);
+  background: #eef1e4;
+}
+
+.button-row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  min-width: 120px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+button:hover:enabled {
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#lime-btn {
+  background: var(--lime);
+}
+
+#lemon-btn {
+  background: var(--lemon);
+}
+
+.message {
+  min-height: 1.5em;
+  margin: 0.9rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.message.success {
+  color: var(--ok);
+}
+
+.message.error {
+  color: var(--bad);
+}
