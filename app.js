@@ -15,6 +15,8 @@ const lemonImages = [
 
 const goodMessages = ["Congratulations!", "Nailed it!", "Acceptable!"];
 const badMessages = ["Unacceptable!", "Incorrect.", "You need more practice."];
+const masteryMessage =
+  "Looks like you've mastered the art of telling limes from lemons";
 
 const allFruits = [
   ...limeImages.map((src) => ({ type: "lime", src })),
@@ -29,6 +31,7 @@ const buttons = Array.from(document.querySelectorAll(".button-row button"));
 let currentFruit = null;
 let previousFruitSrc = "";
 let roundTimer = null;
+let remainingFruits = [...allFruits];
 
 function randomFrom(list) {
   return list[Math.floor(Math.random() * list.length)];
@@ -46,25 +49,43 @@ function clearFeedback() {
 }
 
 function pickFruit() {
-  if (allFruits.length === 0) {
+  if (remainingFruits.length === 0) {
     throw new Error("No fruit images available.");
   }
 
-  if (allFruits.length === 1) {
-    return allFruits[0];
+  if (remainingFruits.length === 1) {
+    return remainingFruits[0];
   }
 
-  let nextFruit = randomFrom(allFruits);
+  let nextFruit = randomFrom(remainingFruits);
   while (nextFruit.src === previousFruitSrc) {
-    nextFruit = randomFrom(allFruits);
+    nextFruit = randomFrom(remainingFruits);
   }
   return nextFruit;
+}
+
+function removeCurrentFruitFromRotation() {
+  if (!currentFruit) return;
+  remainingFruits = remainingFruits.filter((fruit) => fruit.src !== currentFruit.src);
+}
+
+function showMasteryMessage() {
+  currentFruit = null;
+  fruitStage.classList.remove("loading");
+  setButtonsEnabled(false);
+  message.textContent = masteryMessage;
+  message.classList.remove("success", "error");
 }
 
 function startRound() {
   if (roundTimer) {
     clearTimeout(roundTimer);
     roundTimer = null;
+  }
+
+  if (remainingFruits.length === 0) {
+    showMasteryMessage();
+    return;
   }
 
   clearFeedback();
@@ -87,8 +108,16 @@ function resolveGuess(choice) {
   message.classList.toggle("error", !isCorrect);
 
   setButtonsEnabled(false);
+  removeCurrentFruitFromRotation();
   fruitStage.classList.add("loading");
-  roundTimer = setTimeout(startRound, 2500);
+  roundTimer = setTimeout(() => {
+    if (remainingFruits.length === 0) {
+      showMasteryMessage();
+      return;
+    }
+
+    startRound();
+  }, 2500);
 }
 
 buttons.forEach((button) => {
@@ -100,6 +129,11 @@ buttons.forEach((button) => {
 
 fruitImage.addEventListener("error", () => {
   // Skip broken assets and immediately try another round.
+  removeCurrentFruitFromRotation();
+  if (remainingFruits.length === 0) {
+    showMasteryMessage();
+    return;
+  }
   startRound();
 });
 
