@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Whole lemon">
+  <defs>
+    <radialGradient id="bg" cx="30%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#fffbe3" />
+      <stop offset="100%" stop-color="#f4e7a2" />
+    </radialGradient>
+    <linearGradient id="lemonSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe867" />
+      <stop offset="100%" stop-color="#e0bd1d" />
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)" />
+  <ellipse cx="256" cy="396" rx="148" ry="26" fill="#b9b08c" opacity="0.35" />
+
+  <g transform="translate(40 52) rotate(-8 216 204)">
+    <ellipse cx="216" cy="204" rx="174" ry="130" fill="url(#lemonSkin)" stroke="#c29f12" stroke-width="8" />
+    <ellipse cx="216" cy="204" rx="140" ry="102" fill="#fff7c6" opacity="0.32" />
+    <circle cx="148" cy="142" r="20" fill="#fff7c6" opacity="0.58" />
+    <circle cx="260" cy="126" r="15" fill="#fff7c6" opacity="0.42" />
+    <circle cx="312" cy="224" r="12" fill="#fff7c6" opacity="0.38" />
+    <circle cx="193" cy="271" r="10" fill="#fff7c6" opacity="0.4" />
+  </g>
+</svg>

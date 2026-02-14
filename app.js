@@ -2,12 +2,18 @@ const limeImages = [
   "res/lime/array.png",
   "res/lime/image.png",
   "res/lime/image copy.png",
+  "res/lime/whole.svg",
+  "res/lime/slice.svg",
+  "res/lime/cluster.svg",
 ];
 
 const lemonImages = [
   "res/lemon/slice.png",
   "res/lemon/pile.png",
   "res/lemon/image.png",
+  "res/lemon/whole.svg",
+  "res/lemon/half.svg",
+  "res/lemon/stack.svg",
 ];
 
 const goodMessages = ["Congratulations!", "Nailed it!", "Acceptable!"];
