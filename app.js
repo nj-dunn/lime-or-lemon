@@ -1,19 +1,14 @@
 const limeImages = [
-  "res/lime/array.png",
-  "res/lime/image.png",
-  "res/lime/image copy.png",
-  "res/lime/whole.svg",
-  "res/lime/slice.svg",
-  "res/lime/cluster.svg",
+  "res/lime/gross-squeeze.png",
+  "res/lime/lime-basket.png",
+  "res/lime/pile-o-limes.png",
 ];
 
 const lemonImages = [
-  "res/lemon/slice.png",
-  "res/lemon/pile.png",
-  "res/lemon/image.png",
-  "res/lemon/whole.svg",
-  "res/lemon/half.svg",
-  "res/lemon/stack.svg",
+  "res/lemon/basket.png",
+  "res/lemon/lemonade.png",
+  "res/lemon/lemontree.png",
+  "res/lemon/wedge.png",
 ];
 
 const goodMessages = ["Congratulations!", "Nailed it!", "Acceptable!"];
