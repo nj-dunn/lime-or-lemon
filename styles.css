@@ -24,17 +24,59 @@ body {
   place-items: center;
 }
 
-.game {
+.app-shell {
   width: min(92vw, 640px);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.brand {
+  text-align: center;
+}
+
+.brand-kicker {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #416862;
+}
+
+.brand-logo {
+  margin: 0.25rem 0 0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.brand-lime {
+  color: var(--lime);
+  text-shadow: 0 2px 0 #1f6930;
+}
+
+.brand-separator {
+  font-size: 0.5em;
+  letter-spacing: 0.06em;
+  margin: 0 0.25em;
+  color: #587a75;
+  vertical-align: middle;
+}
+
+.brand-lemon {
+  color: var(--lemon);
+  text-shadow: 0 2px 0 #8a7000;
+}
+
+.game {
+  width: 100%;
   padding: 1.25rem;
   border-radius: 20px;
   background: var(--panel);
   box-shadow: 0 14px 32px rgba(35, 48, 48, 0.2);
   text-align: center;
-}
-
-.title {
-  margin: 0 0 1rem;
 }
 
 .fruit-image {

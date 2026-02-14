@@ -7,22 +7,32 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="game" aria-live="polite">
-      <h1 class="title">Lime or Lemon?</h1>
-      <img
-        id="fruit-image"
-        class="fruit-image"
-        src=""
-        alt="Mystery citrus fruit"
-        width="420"
-        height="420"
-      />
-      <div class="button-row">
-        <button id="lime-btn" type="button" data-choice="lime">LIME</button>
-        <button id="lemon-btn" type="button" data-choice="lemon">LEMON</button>
-      </div>
-      <p id="message" class="message" role="status"></p>
-    </main>
+    <div class="app-shell">
+      <header class="brand" aria-label="Lime or Lemon">
+        <p class="brand-kicker">citrus challenge</p>
+        <h1 class="brand-logo">
+          <span class="brand-lime">Lime</span>
+          <span class="brand-separator">or</span>
+          <span class="brand-lemon">Lemon</span>
+        </h1>
+      </header>
+
+      <main class="game" aria-live="polite">
+        <img
+          id="fruit-image"
+          class="fruit-image"
+          src=""
+          alt="Mystery citrus fruit"
+          width="420"
+          height="420"
+        />
+        <div class="button-row">
+          <button id="lime-btn" type="button" data-choice="lime">LIME</button>
+          <button id="lemon-btn" type="button" data-choice="lemon">LEMON</button>
+        </div>
+        <p id="message" class="message" role="status"></p>
+      </main>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
