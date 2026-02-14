@@ -19,6 +19,7 @@ const allFruits = [
 ];
 
 const fruitImage = document.getElementById("fruit-image");
+const fruitStage = document.getElementById("fruit-stage");
 const message = document.getElementById("message");
 const buttons = Array.from(document.querySelectorAll(".button-row button"));
 
@@ -65,6 +66,7 @@ function startRound() {
 
   clearFeedback();
   setButtonsEnabled(true);
+  fruitStage.classList.remove("loading");
 
   currentFruit = pickFruit();
   previousFruitSrc = currentFruit.src;
@@ -82,6 +84,7 @@ function resolveGuess(choice) {
   message.classList.toggle("error", !isCorrect);
 
   setButtonsEnabled(false);
+  fruitStage.classList.add("loading");
   roundTimer = setTimeout(startRound, 2500);
 }
 

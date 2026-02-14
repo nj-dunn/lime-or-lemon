@@ -18,14 +18,19 @@
       </header>
 
       <main class="game" aria-live="polite">
-        <img
-          id="fruit-image"
-          class="fruit-image"
-          src=""
-          alt="Mystery citrus fruit"
-          width="420"
-          height="420"
-        />
+        <div id="fruit-stage" class="fruit-stage">
+          <img
+            id="fruit-image"
+            class="fruit-image"
+            src=""
+            alt="Mystery citrus fruit"
+            width="420"
+            height="420"
+          />
+          <div class="loading-overlay" aria-hidden="true">
+            Please wait - loading next fruit...
+          </div>
+        </div>
         <div class="button-row">
           <button id="lime-btn" type="button" data-choice="lime">LIME</button>
           <button id="lemon-btn" type="button" data-choice="lemon">LEMON</button>
