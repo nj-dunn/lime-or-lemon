@@ -1,11 +1,13 @@
 const limeImages = [
   "res/lime/gross-squeeze.png",
-  "res/lime/lime-basket.png",
+  "res/lime/lime-bowl.png",
+  "res/lime/lime-cutting-board.png",
   "res/lime/pile-o-limes.png",
 ];
 
 const lemonImages = [
   "res/lemon/basket.png",
+  "res/lemon/image.png",
   "res/lemon/lemonade.png",
   "res/lemon/lemontree.png",
   "res/lemon/wedge.png",
